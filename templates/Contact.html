@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Home.css">
+    <script defer src="../templates/JS.js"></script>
+</head>
+<body>
+    <header id="container">
+        <span >
+            <img class="rotate" id = "imgh1" src="../static/logo.png" alt="">
+        </span> 
+        <span id="spanh">
+            <img id = "imgh2" src="../static/logo.png" alt="">
+        </span> 
+    </header>
+    <nav class="topview">
+        <a class="nav1" href="./HW1.html">Home Page</a>
+        <a class="nav1" href="./Contact.html">Contact</a>
+    </nav>
+    <div class="box" >
+        <span >
+            <img id="img1"  src="../static/Pic3.png" alt="">
+        </span>
+        <span > 
+            <h1 id="htext">contact us</h1>
+        </span> 
+        <span>
+            <img id="img2"  src="../static/Pic4.png" alt="">
+        </span>
+    </div>
+    <form action="" method="">
+        <div>
+            <h2 > Leave your details</h2>
+        </div>
+        <div>
+            <label for="FirstName">First Name</label>
+            <input type="text" id="FirstName" name="FirstName"><br>
+            <label for="SureName">Sure Name</label>
+            <input type="text" id="SureName" name="SureName"><br>
+            <label for="Country">Country</label>
+            <input type="text" id="Country" name="Country"><br> 
+            <label for="email">email</label>
+            <input type="email" id="email" name="email"><br>
+            <label for="PhoneNum">Phone Number</label>
+            <input type="PhoneNum" id="PhoneNum" name="PhoneNum"><br>
+            <label style="font-size: larger" for="anonymous">Anonymous message?</label>
+            <input type="checkbox" id="anonymous" name="anonymous"><br>
+            <h2>Write your massage</h2>
+            <label for="massage"></label>
+            <input id="massage"  type="text" id="massage" name="massage"><br>
+            <input id="submit" value="Submit" type="submit" onclick="thanks()">
+        </div>
+    </form>
+</body>
+</html>
