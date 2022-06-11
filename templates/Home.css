@@ -1,0 +1,132 @@
+:root {
+    --azure: rgb(84, 151, 180);
+    --purple: rgb(118, 47, 199);
+    --white1:#f2f2f2;
+    --white1:#ddd;
+    }
+body{
+    background-image: url(../static/backround1.jpg);
+    font-family: myFirstFont;
+}
+div{
+    text-align: center;
+}
+header {
+    background-color: var(--azure);
+    overflow: hidden;
+  }
+.topview {
+    background-color:var(--purple);
+    overflow: hidden;
+  }
+#imgh1{
+    grid-area: Header1;
+    height: 150px ; 
+    width: 150px;
+    margin: 10px;
+
+}
+#imgh2{
+    grid-area: Header2;
+    height: 150px ; 
+    width: 150px;
+    margin: 10px;
+    float: right;
+ 
+}
+#container {
+    display: grid;
+    grid-template-areas: 'Header1 Header2';
+}
+  
+  /* Style the links inside the navigation bar */
+  .topview a {
+    float: left;
+    display: block;
+    color: var(--white1);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topview a:hover {
+    background-color: var(--white2);
+    color: black;
+  }
+
+ 
+form{
+    font-weight:800;
+    font-size: larger;
+}
+.nav1:hover{
+   color: orange; 
+}
+.box{
+    border:2px solid black;
+    margin: 10px; 
+    display: grid;
+    grid-template-areas: 'img1 txt img2';
+}
+.box img{
+    height: 150px ; 
+    width: 150px;
+    margin: 50px;
+}
+#img1{
+    grid-area: img1;
+}
+#img2{
+    grid-area: img2;
+}
+#htext{
+    grid-area: txt;
+    color: blue;
+    font-size: 80px;
+    animation: color-change 2s infinite;
+
+}
+#stext{
+    color:rgb(223, 127, 255); 
+    font-size: 50px;
+    font-weight: bold;
+    animation: color-change 2s infinite;
+}
+
+#massage{
+    width: 10cm; 
+    height: 5cm;
+    box-sizing: border-box;
+    align-items: start;
+}
+#submit{
+    background-color: black; 
+    color: azure;
+}
+.active{
+    background-color: blue;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url(../static/ShadowsIntoLight-Regular.ttf);
+}
+@media only screen and (max-width : 600px){
+    #spanh{display: none;}
+    #container {
+        display: grid;
+        justify-content: center;
+        grid-template-areas: 'Header1'
+    }
+    .box {
+        display: grid;
+        justify-content: center;
+        grid-template-areas: 'img1' 'txt' 'img2';
+    }
+}
+@keyframes color-change {
+    0% { color:gray; }
+    50% { color: var(--purple) ; }
+    100% { color: blue; }
+  }
