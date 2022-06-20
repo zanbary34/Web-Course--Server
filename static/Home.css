@@ -108,6 +108,9 @@ form{
 .active{
     background-color: blue;
 }
+#log_in_massage{
+    float=right;
+}
 @font-face {
     font-family: myFirstFont;
     src: url(../static/ShadowsIntoLight-Regular.ttf);

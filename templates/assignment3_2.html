@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Search</h1>
+<form action="/assignment3_2" method="get">
+  <label for="uname">User Name:</label>
+  <input type="text" id="uname" name="uname"><br><br>
+  <input type="submit" value="find"><br><br>
+</form>
+
+{% if u_name %}
+    <h2>Name: {{u_name}} </h2>
+    <h2>Email: {{email_address}} </h2>
+{% endif %}
+{% if users %}
+    <table>
+        {% for user in users %}
+    <TR>
+   <TD>{{users[user]["name"]}}</TD>
+   <TD ><SPAN>{{users[user]["email"]}}</SPAN></TD>
+     {% endfor %}
+    </table>
+{% endif %}
+
+{% if session['logedin'] %}
+    <a href="/log_out">Log-out</a>
+{% else %}
+    {% if massage_wrong %}
+        <h2>{{massage_wrong}}</h2>
+     {% endif %}
+ <h1>Registration</h1>
+<h3>Please insert your details</h3>
+<form action="/assignment3_2" method="post">
+  <label for="uname_r">User Name:</label>
+  <input type="text" id="uname_r" name="uname_r"><br><br>
+  <label for="email_r">Email:</label>
+  <input type="email" id="email_r" name="email_r"><br><br>
+  <input type="submit" value="Register"><br><br>
+</form>
+  {% endif %}
+  {% endblock %}

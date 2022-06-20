@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+        {% block content %}
+            {{ super() }}
+            <table>
+                {% for i in range(favor_movies["movie"]|length) %}
+<TR>
+   <TD class="c3">{{favor_movies.movie[i]|upper}}</TD>
+   <TD class="c4"><SPAN>{{favor_movies.star[i]}}</SPAN></TD>
+    {% if favor_movies.year[i]<1980 %}
+         <TD class="c5"><SPAN>old</SPAN></TD>
+    {% else %}
+   <TD class="c5"><SPAN>{{favor_movies.year[i]}}</SPAN></TD>
+      {% endif %}
+</TR>
+{% endfor %}
+</table>
+{% endblock %}

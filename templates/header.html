@@ -9,4 +9,9 @@
     <nav class="topview">
         <a class="nav1" href="/home">Home Page</a>
         <a class="nav1" href="/contact">Contact</a>
+        <a class="nav1" href="/assignment3_1">assignment3_1</a>
+        <a class="nav1" href="/assignment3_2">assignment3_2</a>
+         {% if session['logedin']%}
+        <a id="log_in_massage" style="float:right">Logged-in {{session['username']}}</a>
+      {% endif %}
     </nav>
