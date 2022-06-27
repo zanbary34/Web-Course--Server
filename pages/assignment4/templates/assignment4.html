@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Users Page</h1>
+
+   {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            {% for message in messages%}
+                <h3>{{message}}</h3>
+            {% endfor%}
+        {% endif %}
+         {% endwith %}
+    <div class="container">
+    <h2>Insert User</h2>
+        <form action="/insert_user" method="post">
+            <input type="text" name="name" placeholder="Insert Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="submit" value="send">
+        </form>
+
+    <h2>update User</h2>
+         <form action="/update_user" method="post">
+    <input list="all_users" name="user_name" >
+        <datalist id="all_users">
+         {% for user in users %}
+  <option  value="{{ user.u_name }}">{{ user.u_name }}</option>
+        {% endfor %}
+        </datalist>
+        <input type="email" name="user_email" placeholder="Email">
+            <input type="submit" value="send" onclick="massage_user()">
+         </form>
+        <h2>Users List</h2>
+        <table style="margin: auto">
+        <TD>Name </TD>
+        <TD>Email </TD>
+        {% for user in users %}
+              <TR>
+               <TD> {{ user.u_name }}</TD>
+            <TD> <span>{{ user.email }}</span></TD>
+
+               <TD><span><form action="/delete_user" method="post">
+                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                    <input type="submit" value="Delete" onclick="massage_user()">
+               </form></span>
+            </TD>
+            </TR>
+             {% endfor %}
+            </table>
+            </div>
+
+
+{% endblock %}

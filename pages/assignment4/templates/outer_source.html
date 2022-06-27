@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<span>{{users}}</span>
+
+ <h1>Fetch - FrontEnd</h1>
+        <input type="number" id="id" name="id"><br><br>
+       <button onclick="myFunction()">search</button>
+
+
+    <main>
+
+    </main>
+ <h1>Fetch - BackEnd</h1>
+        <form action="/fetch_be" method="get">
+        <input type="number" name="num"><br>
+        <input type="submit" value="search">
+    </form>
+     {% if massage %}
+            <h3>{{massage}}</h3>
+      {% elif fname %}
+            <img src="{{avatar}}" alt="Profile Picture"/>
+            <br>
+             <span>Name : {{fname}} {{lname}}</span>
+             <br>
+              <span>Email :  {{email}}</span>
+    {% endif %}
+
+
+  <script src="/pages/assignment4/js/json2.js"></script>
+{% endblock %}

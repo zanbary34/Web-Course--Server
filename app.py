@@ -1,10 +1,12 @@
 from datetime import timedelta
 
+import mysql.connector
 from flask import Flask, redirect, render_template, request, session, url_for
+from pages.assignment4.assignment4 import assignment4
 
 app = Flask(__name__)
 
-
+app.register_blueprint(assignment4)
 app.secret_key = '123'
 app.config['SESSION_PERMANENT'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=20)
